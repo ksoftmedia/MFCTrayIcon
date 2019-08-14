@@ -52,8 +52,6 @@ BOOL CMFCTrayIconDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-
-
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -107,8 +105,7 @@ LRESULT CMFCTrayIconDlg::OnTrayNotify(WPARAM wp, LPARAM lp)
 		return 1;
 	case WM_LBUTTONDBLCLK:
 		Shell_NotifyIcon(NIM_DELETE, &m_TrayData);
-		ShowWindow(SW_RESTORE);
-		SetFocus();
+		ShowWindow(SW_SHOWNORMAL);
 		return 1;
 	}
 
